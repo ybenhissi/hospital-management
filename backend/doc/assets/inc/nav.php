@@ -12,22 +12,6 @@
 ?>
     <div class="navbar-custom">
         <ul class="list-unstyled topnav-menu float-right mb-0">
-
-            <li class="d-none d-sm-block">
-                <form class="app-search">
-                    <div class="app-search-box">
-                        <div class="input-group">
-                            <input type="text" class="form-control" placeholder="Search...">
-                            <div class="input-group-append">
-                                <button class="btn" type="submit">
-                                    <i class="fe-search"></i>
-                                </button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </li>
-
             
             <li class="dropdown notification-list">
                 <a class="nav-link dropdown-toggle nav-user mr-0 waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
@@ -39,7 +23,7 @@
                 <div class="dropdown-menu dropdown-menu-right profile-dropdown ">
                     <!-- item-->
                     <div class="dropdown-header noti-title">
-                        <h6 class="text-overflow m-0">Welcome !</h6>
+                        <h6 class="text-overflow m-0">Bienvenue !</h6>
                     </div>
 
                     <!-- item-->
@@ -50,7 +34,7 @@
 
                     <a href="his_doc_update-account.php" class="dropdown-item notify-item">
                         <i class="fas fa-user-tag"></i>
-                        <span>Update Account</span>
+                        <span>Modifier compte</span>
                     </a>
 
 
@@ -59,7 +43,7 @@
                     <!-- item-->
                     <a href="his_doc_logout_partial.php" class="dropdown-item notify-item">
                         <i class="fe-log-out"></i>
-                        <span>Logout</span>
+                        <span>Se déconnecter</span>
                     </a>
 
                 </div>
@@ -92,7 +76,7 @@
 
             <li class="dropdown d-none d-lg-block">
                 <a class="nav-link dropdown-toggle waves-effect waves-light" data-toggle="dropdown" href="#" role="button" aria-haspopup="false" aria-expanded="false">
-                    Create New
+                    Créer un Nouveau
                     <i class="mdi mdi-chevron-down"></i> 
                 </a>
                 <div class="dropdown-menu">

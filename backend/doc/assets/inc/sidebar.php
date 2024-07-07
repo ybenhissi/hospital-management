@@ -33,19 +33,12 @@
                                     <li>
                                         <a href="his_doc_manage_patient.php">Gérer les patients</a>
                                     </li>
-                                    <hr>
-                                    <li>
-                                        <a href="his_doc_discharge_patient.php">Discharge Patients</a>
-                                    </li>
-                                    <li>
-                                        <a href="his_doc_patient_transfer.php">Patient Transfers</a>
-                                    </li>
                                 </ul>
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>
-                                    <span> Laboratory </span>
+                                    <span> Données de santé </span>
                                     <span class="menu-arrow"></span>
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
