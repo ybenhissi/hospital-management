@@ -141,10 +141,6 @@
 
                 </div> <!-- content -->
 
-                <!-- Footer Start -->
-                <?php include('assets/inc/footer.php');?>
-                <!-- end Footer -->
-
             </div>
 
             <!-- ============================================================== -->
