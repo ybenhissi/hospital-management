@@ -206,6 +206,11 @@
                             
                         </div> <!-- container -->
 
+                        <div class="mt-4 mb-1">
+                                            <div class="text-right d-print-none">
+                                                <a href="javascript:window.print()" class="btn btn-primary waves-effect waves-light"><i class="mdi mdi-printer mr-1"></i> Print</a>
+                                            </div>
+                                        </div>
                     </div> <!-- content -->
 
                     <!-- Footer Start -->
