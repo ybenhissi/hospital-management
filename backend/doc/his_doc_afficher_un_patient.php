@@ -56,12 +56,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">View Patients</li>
+                                            <li class="breadcrumb-item active">Afficher Patients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>'s Profile</h4>
+                                    <h4 class="page-title">Profile de <?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></h4>
                                 </div>
                             </div>
                         </div>
@@ -76,14 +76,14 @@
                                     
                                     <div class="text-left mt-3">
                                         
-                                        <p class="text-muted mb-2 font-13"><strong>Full Name :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Mobile :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Address :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Date Of Birth :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Nom complet :</strong> <span class="ml-2"><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Téléphone :</strong><span class="ml-2"><?php echo $row->pat_phone;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Addresse :</strong> <span class="ml-2"><?php echo $row->pat_addr;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Date de naissance :</strong> <span class="ml-2"><?php echo $row->pat_dob;?></span></p>
                                         <p class="text-muted mb-2 font-13"><strong>Age :</strong> <span class="ml-2"><?php echo $row->pat_age;?> Years</span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Ailment :</strong> <span class="ml-2"><?php echo $row->pat_ailment;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Maladie :</strong> <span class="ml-2"><?php echo $row->pat_ailment;?></span></p>
                                         <hr>
-                                        <p class="text-muted mb-2 font-13"><strong>Date Recorded :</strong> <span class="ml-2"><?php echo date("d/m/Y - h:m", strtotime($mysqlDateTime));?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Date d'enregistrement :</strong> <span class="ml-2"><?php echo date("d/m/Y - h:m", strtotime($mysqlDateTime));?></span></p>
                                         <hr>
 
 
@@ -101,17 +101,17 @@
                                     <ul class="nav nav-pills navtab-bg nav-justified">
                                         <li class="nav-item">
                                             <a href="#aboutme" data-toggle="tab" aria-expanded="false" class="nav-link active">
-                                                Prescription
+                                                Ordonnance
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#timeline" data-toggle="tab" aria-expanded="true" class="nav-link ">
-                                                 Vitals
+                                                Vitalité
                                             </a>
                                         </li>
                                         <li class="nav-item">
                                             <a href="#settings" data-toggle="tab" aria-expanded="false" class="nav-link">
-                                                Lab Records
+                                                Dossiers de laboratoire
                                             </a>
                                         </li>
                                     </ul>
@@ -152,11 +152,11 @@
                                                 <table class="table table-borderless mb-0">
                                                     <thead class="thead-light">
                                                         <tr>
-                                                            <th>Body Temperature</th>
-                                                            <th>Heart Rate/Pulse</th>
-                                                            <th>Respiratory Rate</th>
-                                                            <th>Blood Pressure</th>
-                                                            <th>Date Recorded</th>
+                                                        <th>Temperature du corps</th>
+                                                        <th>Fréquence cardiaque/pouls</th>
+                                                        <th>Fréquence respiratoire</th>
+                                                        <th>Pression artérielle</th>
+                                                        <th>Date d'enregistrement</th>
                                                         </tr>
                                                     </thead>
                                                     <?php
@@ -209,7 +209,7 @@
                                                         <h3 class="mt-0 mb-1"><?php echo $row->lab_pat_ailment;?></h3>
                                                         <hr>
                                                         <h5>
-                                                           Laboratory  Tests
+                                                        Tests de laboratoire
                                                         </h5>
                                                         
                                                         <p class="text-muted mt-2">
@@ -217,7 +217,7 @@
                                                         </p>
                                                         <hr>
                                                         <h5>
-                                                           Laboratory Results
+                                                           Résultats de laboratoire
                                                         </h5>
                                                         
                                                         <p class="text-muted mt-2">
