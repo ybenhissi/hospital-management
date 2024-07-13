@@ -110,7 +110,7 @@
                                                     <td><?php echo $row->pat_ailment;?></td>
                                                     <td><?php echo $row->pat_age;?> Years</td>
                                                     
-                                                    <td><a href="his_doc_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Ajouter un test de labarotoire</a></td>
+                                                    <td><a href="his_doc_ajouter_test_labo.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Ajouter un test de labarotoire</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>
