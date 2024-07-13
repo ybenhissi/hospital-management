@@ -31,7 +31,7 @@
                                         <a href="his_doc_afficher_patients.php">Afficher les patients</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_manage_patient.php">Gérer les patients</a>
+                                        <a href="his_doc_gerer_patient.php">Gérer les patients</a>
                                     </li>
                                 </ul>
                             </li>

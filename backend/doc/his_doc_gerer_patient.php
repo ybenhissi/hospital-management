@@ -62,12 +62,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Table de bord</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Manage Patients</li>
+                                            <li class="breadcrumb-item active">Gérer Patients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Manage Patient Details</h4>
+                                    <h4 class="page-title">Gérer les détails des patients</h4>
                                 </div>
                             </div>
                         </div>     
@@ -89,21 +89,20 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input id="demo-foo-search" type="text" placeholder="Search" class="form-control form-control-sm" autocomplete="on">
+                                                    <input id="demo-foo-search" type="text" placeholder="Chercher" class="form-control form-control-sm" autocomplete="on">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     
                                     <div class="table-responsive">
-                                        <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0" data-page-size="7">
+                                        <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0" data-page-size="7" data-sort = "false">
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Address</th>
-                                                <th data-hide="phone">Patient Category</th>
+                                                <th data-toggle="true">Nom du Patient</th>
+                                                <th data-hide="phone">Identifiant du Patient</th>
+                                                <th data-hide="phone">Adresse du Patient</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -128,12 +127,11 @@
                                                     <td><?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?></td>
                                                     <td><?php echo $row->pat_number;?></td>
                                                     <td><?php echo $row->pat_addr;?></td>
-                                                    <td><?php echo $row->pat_type;?></td>
                                                     
                                                     <td>
                                                        <!-- <a href="his_admin_manage_patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>-->
-                                                        <a href="his_doc_afficher_un_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View</a>
-                                                        <a href="his_doc_update_single_patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Update</a>
+                                                        <a href="his_doc_afficher_un_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> Afficher</a>
+                                                        <a href="his_doc_update_single_patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Mettre à jour</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
