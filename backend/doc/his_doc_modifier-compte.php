@@ -104,7 +104,7 @@
                                                 <li class="breadcrumb-item active">Profile</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Profile</h4>
+                                        <h4 class="page-title">Profile de <?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?></h4>
                                     </div>
                                 </div>
                             </div>

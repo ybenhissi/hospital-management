@@ -81,7 +81,7 @@
                             <!--Start Vendors-->
                                                 
                             <div class="col-md-6 col-xl-6">
-                                <a href="his_doc_account.php">
+                                <a href="his_doc_compte.php">
                                     <div class="widget-rounded-circle card-box">
                                         <div class="row">
                                             <div class="col-6">

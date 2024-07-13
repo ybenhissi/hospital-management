@@ -35,7 +35,7 @@
                 $doc_number=$_SESSION['doc_number'];
                 $ret="SELECT  * FROM his_docs WHERE doc_number=?";
                 $stmt= $mysqli->prepare($ret) ;
-                $stmt->bind_param('i',$doc_number);
+                $stmt->bind_param('s',$doc_number);
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
                 //$cnt=1;
@@ -54,12 +54,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Profile</a></li>
-                                            <li class="breadcrumb-item active">View My Profile</li>
+                                            <li class="breadcrumb-item active">Afficher Mon Profile</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title"><?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?>'s Profile</h4>
+                                    <h4 class="page-title">Profile de <?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?></h4>
                                 </div>
                             </div>
                         </div>
@@ -74,10 +74,9 @@
                                     
                                     <div class="text-centre mt-3">
                                         
-                                        <p class="text-muted mb-2 font-13"><strong>Employee Full Name :</strong> <span class="ml-2"><?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?></span></p>
-                                       <p class="text-muted mb-2 font-13"><strong>Employee Department :</strong> <span class="ml-2"><?php echo $row->doc_dept;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Employee Number :</strong> <span class="ml-2"><?php echo $row->doc_number;?></span></p>
-                                        <p class="text-muted mb-2 font-13"><strong>Employee Email :</strong> <span class="ml-2"><?php echo $row->doc_email;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Nom complet :</strong> <span class="ml-2"><?php echo $row->doc_fname;?> <?php echo $row->doc_lname;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Identifiant :</strong> <span class="ml-2"><?php echo $row->doc_number;?></span></p>
+                                        <p class="text-muted mb-2 font-13"><strong>Email :</strong> <span class="ml-2"><?php echo $row->doc_email;?></span></p>
 
 
                                     </div>
@@ -91,11 +90,11 @@
                                     <table class="table table-borderless mb-0">
                                         <thead class="thead-light">
                                             <tr>
-                                                <th>Body Temperature</th>
-                                                <th>Heart Rate/Pulse</th>
-                                                <th>Respiratory Rate</th>
-                                                <th>Blood Pressure</th>
-                                                <th>Date Recorded</th>
+                                                <th>Temperature du corps</th>
+                                                <th>Fréquence cardiaque/pouls</th>
+                                                <th>Fréquence respiratoire</th>
+                                                <th>Pression artérielle</th>
+                                                <th>Date d'enregistrement</th>
                                             </tr>
                                         </thead>
                                         <?php

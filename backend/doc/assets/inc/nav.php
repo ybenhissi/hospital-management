@@ -26,11 +26,6 @@
                         <h6 class="text-overflow m-0">Bienvenue !</h6>
                     </div>
 
-                    <!-- item-->
-                    <!-- <a href="his_doc_account.php" class="dropdown-item notify-item">
-                        <i class="fas fa-user"></i>
-                        <span>My Account</span>
-                    </a> -->
 
                     <a href="his_doc_modifier-compte.php" class="dropdown-item notify-item">
                         <i class="fas fa-user-tag"></i>
