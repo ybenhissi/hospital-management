@@ -77,11 +77,6 @@
                         <i class="fe-hard-drive mr-1"></i>
                         <span>Données de santé</span>
                     </a>
-
-                    
-                    <div class="dropdown-divider"></div>
-
-                    
                 </div>
             </li>
 
