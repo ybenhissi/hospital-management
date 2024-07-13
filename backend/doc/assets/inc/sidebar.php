@@ -49,7 +49,7 @@
                                         <a href="his_doc_resultat_labo_patient.php">Résultats de laboratoire des patients</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_vitals.php">Patient Vitals</a>
+                                        <a href="his_doc_patient_lab_signes_vitaux.php">Signes vitaux des patients</a>
                                     </li>
                                     
                                     <li>
