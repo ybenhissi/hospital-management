@@ -40,12 +40,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
-                                            <li class="breadcrumb-item active">Add Laboratory Test</li>
+                                            <li class="breadcrumb-item active">Ajouter des tests de laboratoire</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Laboratory Tests</h4>
+                                    <h4 class="page-title">Tests de laboratoire</h4>
                                 </div>
                             </div>
                         </div>     
@@ -67,23 +67,22 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input id="demo-foo-search" type="text" placeholder="Search" class="form-control form-control-sm" autocomplete="on">
+                                                    <input id="demo-foo-search" type="text" placeholder="Chercher" class="form-control form-control-sm" autocomplete="on">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     
                                     <div class="table-responsive">
-                                        <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0" data-page-size="7">
+                                        <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0" data-page-size="7" data-sort = "false">
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Address</th>
-                                                <th data-hide="phone">Patient Ailment</th>
-                                                <th data-hide="phone">Patient Age</th>
-                                                <th data-hide="phone">Patient Category</th>
+                                                <th data-toggle="true">Nom du patient</th>
+                                                <th data-hide="phone">Identifiant du patient</th>
+                                                <th data-hide="phone">Adresse du patient</th>
+                                                <th data-hide="phone">Maladie du patient</th>
+                                                <th data-hide="phone">Age du patient</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -110,9 +109,8 @@
                                                     <td><?php echo $row->pat_addr;?></td>
                                                     <td><?php echo $row->pat_ailment;?></td>
                                                     <td><?php echo $row->pat_age;?> Years</td>
-                                                    <td><?php echo $row->pat_type;?></td>
                                                     
-                                                    <td><a href="his_doc_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Add Lab Test</a></td>
+                                                    <td><a href="his_doc_add_single_lab_test.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Ajouter un test de labarotoire</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

@@ -43,7 +43,7 @@
                                 </a>
                                 <ul class="nav-second-level" aria-expanded="false">
                                     <li>
-                                        <a href="his_doc_patient_lab_test.php">Patient Lab Tests</a>
+                                        <a href="his_doc_patient_test_labo.php">Patient Lab Tests</a>
                                     </li>
                                     <li>
                                         <a href="his_doc_patient_lab_result.php">Patient Lab Results</a>
