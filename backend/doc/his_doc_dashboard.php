@@ -122,11 +122,10 @@
 
                                             <thead class="thead-light">
                                                 <tr>
-                                                    <th>Name</th>
-                                                    <th>Address</th>
-                                                    <th>Mobile Phone</th>
-                                                    <th>Category</th>
-                                                    <th>Ailment</th>
+                                                    <th>Nom</th>
+                                                    <th>Addresse</th>
+                                                    <th>Numero de Tél</th>
+                                                    <th>Maladie</th>
                                                     <th>Age</th>
                                                     <th>Action</th>
                                                 </tr>
@@ -154,16 +153,13 @@
                                                         <?php echo $row->pat_phone;?>
                                                     </td>
                                                     <td>
-                                                        <?php echo $row->pat_type;?>
-                                                    </td>
-                                                    <td>
                                                         <?php echo $row->pat_ailment;?>
                                                     </td>
                                                     <td>
                                                         <?php echo $row->pat_age;?> Years
                                                     </td>
                                                     <td>
-                                                        <a href="his_doc_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>&&pat_name=<?php echo $row->pat_fname;?>_<?php echo $row->pat_lname;?>" class="btn btn-xs btn-success"><i class="mdi mdi-eye"></i> View</a>
+                                                        <a href="his_doc_view_single_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>&&pat_name=<?php echo $row->pat_fname;?>_<?php echo $row->pat_lname;?>" class="btn btn-xs btn-success"><i class="mdi mdi-eye"></i> Afficher</a>
                                                     </td>                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                   
                                                 </tr>
                                             </tbody>

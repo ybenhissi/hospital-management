@@ -53,19 +53,6 @@
 
         </ul>
 
-        <!-- LOGO -->
-        <div class="logo-box">
-            <a href="his_admin_dashboard.php" class="logo text-center">
-                <span class="logo-lg">
-                    <img src="assets/images/logo-light.png" alt="" height="18">
-                    <!-- <span class="logo-lg-text-light">UBold</span> -->
-                </span>
-                <span class="logo-sm">
-                    <!-- <span class="logo-sm-text-dark">U</span> -->
-                    <img src="assets/images/logo-sm-white.png" alt="" height="24">
-                </span>
-            </a>
-        </div>
 
         <ul class="list-unstyled topnav-menu topnav-menu-left m-0">
             <li>
@@ -93,7 +80,7 @@
                     <!-- item-->
                     <a href="his_doc_lab_report.php" class="dropdown-item">
                         <i class="fe-hard-drive mr-1"></i>
-                        <span>Laboratory Report</span>
+                        <span>Données de santé</span>
                     </a>
 
                     
