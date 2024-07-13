@@ -65,7 +65,7 @@
                     
 
                     <!-- item-->
-                    <a href="his_doc_register_patient.php" class="dropdown-item">
+                    <a href="his_doc_ajouter_patient.php" class="dropdown-item">
                         <i class="fe-activity mr-1"></i>
                         <span>Patient</span>
                     </a>
