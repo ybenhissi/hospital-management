@@ -7,10 +7,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
 
     <!-- Page Title -->
-    <title>Hospital Management System</title>
+    <title>Système de Gestion Hospitalière</title>
 
     <!-- Favicon -->
-    <link rel="shortcut icon" href="assets/images/logo/favicon.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/images/logo/diagnostic.png" type="image/x-icon">
 
     <!-- CSS Files -->
     <link rel="stylesheet" href="assets/css/animate-3.7.0.css">
@@ -54,8 +54,8 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-8">
-                    <h4>
-                    Prendre soin d’une vie meilleure</h4>
+                    <h3>
+                    Prendre soin d’une vie meilleure</h3>
                     <h1>Ouvrir la voie à l’excellence médicale</h1>
                     <p>Nous sommes récompensés comme l'un des meilleurs systèmes de gestion hospitalière, capable d'intégrer tous les systèmes, processus et machines dans un système d'information intelligent pour obtenir une efficacité opérationnelle et aider les hôpitaux dans le processus de prise de décision.</p>
                 </div>

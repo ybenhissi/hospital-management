@@ -52,7 +52,7 @@
                                     <div class="page-title-box">
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="his_doc_dashboard.php">Dashboard</a></li>
+                                                <li class="breadcrumb-item"><a href="his_doc_tableau_de_bord.php">Dashboard</a></li>
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Pharmaceuticals</a></li>
                                                 <li class="breadcrumb-item active">View Prescriptions</li>
                                             </ol>

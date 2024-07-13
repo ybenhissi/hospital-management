@@ -10,7 +10,7 @@
                             <li class="menu-title">Navigation</li>
 
                             <li>
-                                <a href="his_doc_dashboard.php">
+                                <a href="his_doc_tableau_de_bord.php">
                                     <i class="fe-airplay"></i>
                                     <span> Tableau de bord </span>
                                 </a>

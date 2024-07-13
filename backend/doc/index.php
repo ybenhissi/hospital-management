@@ -17,7 +17,7 @@
         //$ldate=date('d/m/Y h:i:s', time());
         if($rs)
             {//if its sucessfull
-                header("location:his_doc_dashboard.php");
+                header("location:his_doc_tableau_de_bord.php");
             }
 
         else
@@ -39,7 +39,7 @@
         <meta content="" name="MartDevelopers" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="assets/images/diagnostic.png">
 
         <!-- App css -->
         <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
