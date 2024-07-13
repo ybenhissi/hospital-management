@@ -73,7 +73,7 @@
 
 
                     <!-- item-->
-                    <a href="his_doc_lab_report.php" class="dropdown-item">
+                    <a href="his_doc_labo_rapport.php" class="dropdown-item">
                         <i class="fe-hard-drive mr-1"></i>
                         <span>Données de santé</span>
                     </a>

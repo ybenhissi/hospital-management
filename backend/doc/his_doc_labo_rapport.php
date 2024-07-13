@@ -40,12 +40,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory</a></li>
-                                            <li class="breadcrumb-item active">Laboratory Records</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratoire</a></li>
+                                            <li class="breadcrumb-item active">Dossiers de laboratoire</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Patient Details</h4>
+                                    <h4 class="page-title">Détails du patient</h4>
                                 </div>
                             </div>
                         </div>     
@@ -67,21 +67,21 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input id="demo-foo-search" type="text" placeholder="Search" class="form-control form-control-sm" autocomplete="on">
+                                                    <input id="demo-foo-search" type="text" placeholder="Chercher" class="form-control form-control-sm" autocomplete="on">
                                                 </div>
                                             </div>
                                         </div>
                                     </div>
                                     
                                     <div class="table-responsive">
-                                        <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0" data-page-size="7">
+                                        <table id="demo-foo-filtering" class="table table-bordered toggle-circle mb-0" data-page-size="7" data-sort = "false">
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Ailment</th>
-                                                <th data-hide="phone">Date Lab Test Conducted</th>
+                                                <th data-toggle="true">Nom du patient</th>
+                                                <th data-hide="phone">identifiant du patient</th>
+                                                <th data-hide="phone">Maladie du patient</th>
+                                                <th data-hide="phone">Date du test de laboratoire effectué</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -108,7 +108,7 @@
                                                     <td><?php echo $row->lab_pat_number;?></td>
                                                     <td><?php echo $row->lab_pat_ailment;?></td>
                                                     <td><?php echo date("d/m/Y", strtotime($mysqlDateTime));?></td>
-                                                    <td><a href="his_doc_view_single_lab_record.php?lab_id=<?php echo $row->lab_id ;?>&&lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> View Lab Report</a></td>
+                                                    <td><a href="his_doc_view_single_lab_record.php?lab_id=<?php echo $row->lab_id ;?>&&lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> Afficher le rapport de laboratoire</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

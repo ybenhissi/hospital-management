@@ -53,7 +53,7 @@
                                     </li>
                                     
                                     <li>
-                                        <a href="his_doc_lab_report.php">Lab Reports</a>
+                                        <a href="his_doc_labo_rapport.php">Rapport de laboratoire</a>
                                     </li>
                                     <hr>
                                     
