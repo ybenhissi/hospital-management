@@ -46,7 +46,7 @@
                                         <a href="his_doc_patient_test_labo.php">Tests de laboratoire</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_patient_lab_result.php">Patient Lab Results</a>
+                                        <a href="his_doc_resultat_labo_patient.php">Patient Lab Results</a>
                                     </li>
                                     <li>
                                         <a href="his_doc_patient_lab_vitals.php">Patient Vitals</a>
