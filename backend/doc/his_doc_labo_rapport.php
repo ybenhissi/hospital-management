@@ -108,7 +108,7 @@
                                                     <td><?php echo $row->lab_pat_number;?></td>
                                                     <td><?php echo $row->lab_pat_ailment;?></td>
                                                     <td><?php echo date("d/m/Y", strtotime($mysqlDateTime));?></td>
-                                                    <td><a href="his_doc_view_single_lab_record.php?lab_id=<?php echo $row->lab_id ;?>&&lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> Afficher le rapport de laboratoire</a></td>
+                                                    <td><a href="his_doc_afficher_rapport_labo.php?lab_id=<?php echo $row->lab_id ;?>&&lab_number=<?php echo $row->lab_number ;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> Afficher le rapport de laboratoire</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

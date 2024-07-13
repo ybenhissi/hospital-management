@@ -52,12 +52,11 @@
                                     <div class="page-title-box">
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="his_doc_tableau_de_bord.php">Dashboard</a></li>
-                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Laboratory Records</a></li>
-                                                <li class="breadcrumb-item active">View  Records</li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Dossiers de laboratoire</a></li>
+                                                <li class="breadcrumb-item active">Afficher les enregistrements</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">#<?php echo $row->lab_number;?></h4>
                                     </div>
                                 </div>
                             </div>     
@@ -79,21 +78,21 @@
                                             </div> <!-- end col -->
                                             <div class="col-xl-7">
                                                 <div class="pl-xl-3 mt-3 mt-xl-0">
-                                                    <h2 class="mb-3">Patient's Name : <?php echo $row->lab_pat_name;?></h2>
+                                                    <h2 class="mb-3">Nom du patient : <?php echo $row->lab_pat_name;?></h2>
                                                     <hr>
-                                                    <h3 class="text-danger ">Patient Number : <?php echo $row->lab_pat_number;?></h3>
+                                                    <h3 class="text-danger ">Identifiant du patient : <?php echo $row->lab_pat_number;?></h3>
                                                     <hr>
-                                                    <h3 class="text-danger ">Patient Ailment : <?php echo $row->lab_pat_ailment;?></h3>
+                                                    <h3 class="text-danger ">Maladie du patient : <?php echo $row->lab_pat_ailment;?></h3>
                                                     <hr>
-                                                    <h3 class="text-danger ">Date Recorded : <?php echo date("d/m/Y - h:m:s", strtotime($mysqlDateTime));?></h3>
+                                                    <h3 class="text-danger ">Date d'enregistrement : <?php echo date("d/m/Y - h:m:s", strtotime($mysqlDateTime));?></h3>
                                                     <hr>
-                                                    <h2 class="align-centre">Laboratory Test</h2>
+                                                    <h2 class="align-centre">Test de laboratoire</h2>
                                                     <hr>
                                                     <p class="text-muted mb-4">
                                                         <?php echo $row->lab_pat_tests;?>
                                                     </p>
                                                     <hr>
-                                                    <h2 class="align-centre">Laboratory Result</h2>
+                                                    <h2 class="align-centre">Résultat de laboratoire</h2>
                                                     <p class="text-muted mb-4">
                                                         <?php echo $row->lab_pat_results;?>
                                                     </p>
