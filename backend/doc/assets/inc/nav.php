@@ -32,7 +32,7 @@
                         <span>My Account</span>
                     </a> -->
 
-                    <a href="his_doc_update-account.php" class="dropdown-item notify-item">
+                    <a href="his_doc_modifier-compte.php" class="dropdown-item notify-item">
                         <i class="fas fa-user-tag"></i>
                         <span>Modifier compte</span>
                     </a>
