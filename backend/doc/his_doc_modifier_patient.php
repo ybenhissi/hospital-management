@@ -9,15 +9,14 @@
 			$pat_lname=$_POST['pat_lname'];
 			$pat_number=$_GET['pat_number'];
             $pat_phone=$_POST['pat_phone'];
-            $pat_type=$_POST['pat_type'];
             $pat_addr=$_POST['pat_addr'];
             $pat_age = $_POST['pat_age'];
             $pat_dob = $_POST['pat_dob'];
             $pat_ailment = $_POST['pat_ailment'];
             //sql to insert captured values
-			$query="UPDATE  his_patients  SET pat_fname=?, pat_lname=?, pat_age=?, pat_dob=?,  pat_phone=?, pat_type=?, pat_addr=?, pat_ailment=? WHERE pat_number=?";
+			$query="UPDATE  his_patients  SET pat_fname=?, pat_lname=?, pat_age=?, pat_dob=?,  pat_phone=?, pat_addr=?, pat_ailment=? WHERE pat_number=?";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob,  $pat_phone, $pat_type, $pat_addr, $pat_ailment, $pat_number);
+			$rc=$stmt->bind_param('ssssssss', $pat_fname, $pat_lname, $pat_age, $pat_dob,  $pat_phone, $pat_addr, $pat_ailment, $pat_number);
 			$stmt->execute();
 			/*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
@@ -26,10 +25,10 @@
 			//declare a varible which will be passed to alert function
 			if($stmt)
 			{
-				$success = "Patient Details Updated";
+				$success = "Détails du patient mis à jour";
 			}
 			else {
-				$err = "Please Try Again Or Try Later";
+				$err = "Veuillez réessayer ou réessayer plus tard";
 			}
 			
 			
@@ -71,12 +70,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="his_admin_dashboard.php">Tableau de bord</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">Manage Patients</li>
+                                            <li class="breadcrumb-item active">Gérer Patient</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Update Patient Details</h4>
+                                    <h4 class="page-title">Mettre à jour les détails du patient</h4>
                                 </div>
                             </div>
                         </div>     
@@ -87,7 +86,7 @@
                             $pat_number=$_GET['pat_number'];
                             $ret="SELECT  * FROM his_patients WHERE pat_number=?";
                             $stmt= $mysqli->prepare($ret) ;
-                            $stmt->bind_param('i',$pat_number);
+                            $stmt->bind_param('s',$pat_number);
                             $stmt->execute() ;//ok
                             $res=$stmt->get_result();
                             //$cnt=1;
@@ -98,57 +97,49 @@
                             <div class="col-12">
                                 <div class="card">
                                     <div class="card-body">
-                                        <h4 class="header-title">Fill all fields</h4>
+                                        <h4 class="header-title">Remplissez tous les champs</h4>
                                         <!--Add Patient Form-->
                                         <form method="post">
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputEmail4" class="col-form-label">First Name</label>
-                                                    <input type="text" required="required" value="<?php echo $row->pat_fname;?>" name="pat_fname" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
+                                                    <label for="inputEmail4" class="col-form-label">Prénom</label>
+                                                    <input type="text" required="required" value="<?php echo $row->pat_fname;?>" name="pat_fname" class="form-control" id="inputEmail4" placeholder="Prénom du patient">
                                                 </div>
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputPassword4" class="col-form-label">Last Name</label>
-                                                    <input required="required" type="text" value="<?php echo $row->pat_lname;?>" name="pat_lname" class="form-control"  id="inputPassword4" placeholder="Patient`s Last Name">
+                                                    <label for="inputPassword4" class="col-form-label">Nom</label>
+                                                    <input required="required" type="text" value="<?php echo $row->pat_lname;?>" name="pat_lname" class="form-control"  id="inputPassword4" placeholder="Nom du patient">
                                                 </div>
                                             </div>
 
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
-                                                    <label for="inputEmail4" class="col-form-label">Date Of Birth</label>
+                                                    <label for="inputEmail4" class="col-form-label">Date de naissance</label>
                                                     <input type="text" required="required" value="<?php echo $row->pat_dob;?>" name="pat_dob" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
                                                 </div>
                                                 <div class="form-group col-md-6">
                                                     <label for="inputPassword4" class="col-form-label">Age</label>
-                                                    <input required="required" type="text" value="<?php echo $row->pat_age;?>" name="pat_age" class="form-control"  id="inputPassword4" placeholder="Patient`s Age">
+                                                    <input required="required" type="text" value="<?php echo $row->pat_age;?>" name="pat_age" class="form-control"  id="inputPassword4" placeholder="Age du patient">
                                                 </div>
                                             </div>
 
                                             <div class="form-group">
-                                                <label for="inputAddress" class="col-form-label">Address</label>
-                                                <input required="required" type="text" value="<?php echo $row->pat_addr;?>" class="form-control" name="pat_addr" id="inputAddress" placeholder="Patient's Addresss">
+                                                <label for="inputAddress" class="col-form-label">Addresse</label>
+                                                <input required="required" type="text" value="<?php echo $row->pat_addr;?>" class="form-control" name="pat_addr" id="inputAddress" placeholder="Addressse du patient">
                                             </div>
 
                                             <div class="form-row">
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputCity" class="col-form-label">Mobile Number</label>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputCity" class="col-form-label">Téléphone</label>
                                                     <input required="required" type="text" value="<?php echo $row->pat_phone;?>" name="pat_phone" class="form-control" id="inputCity">
                                                 </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputCity" class="col-form-label">Ailment</label>
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputCity" class="col-form-label">Maladie</label>
                                                     <input required="required" type="text" value="<?php echo $row->pat_ailment;?>" name="pat_ailment" class="form-control" id="inputCity">
-                                                </div>
-                                                <div class="form-group col-md-4">
-                                                    <label for="inputState" class="col-form-label">Patient's Type</label>
-                                                    <select id="inputState" required="required" name="pat_type" class="form-control">
-                                                        <option>Choose</option>
-                                                        <option>InPatient</option>
-                                                        <option>OutPatient</option>
-                                                    </select>
                                                 </div>
                                                 
                                             </div>
 
-                                            <button type="submit" name="update_patient" class="ladda-button btn btn-success" data-style="expand-right">Add Patient</button>
+                                            <button type="submit" name="update_patient" class="ladda-button btn btn-success" data-style="expand-right">Modifier Patient</button>
 
                                         </form>
                                         <!--End Patient Form-->

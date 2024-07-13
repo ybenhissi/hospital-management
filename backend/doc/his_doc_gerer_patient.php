@@ -131,7 +131,7 @@
                                                     <td>
                                                        <!-- <a href="his_admin_manage_patient.php?delete=<?php echo $row->pat_id;?>" class="badge badge-danger"><i class=" mdi mdi-trash-can-outline "></i> Delete</a>-->
                                                         <a href="his_doc_afficher_un_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-eye"></i> Afficher</a>
-                                                        <a href="his_doc_update_single_patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Mettre à jour</a>
+                                                        <a href="his_doc_modifier_patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-primary"><i class="mdi mdi-check-box-outline "></i> Mettre à jour</a>
                                                     </td>
                                                 </tr>
                                                 </tbody>
