@@ -41,12 +41,12 @@
                                 <div class="page-title-box">
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboard</a></li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
                                             <li class="breadcrumb-item"><a href="javascript: void(0);">Patients</a></li>
-                                            <li class="breadcrumb-item active">View Patients</li>
+                                            <li class="breadcrumb-item active">Afficher Patients</li>
                                         </ol>
                                     </div>
-                                    <h4 class="page-title">Patient Details</h4>
+                                    <h4 class="page-title">Détails des Patients</h4>
                                 </div>
                             </div>
                         </div>     
@@ -68,7 +68,7 @@
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <input id="demo-foo-search" type="text" placeholder="Search" class="form-control form-control-sm" autocomplete="on">
+                                                    <input id="demo-foo-search" type="text" placeholder="Chercher" class="form-control form-control-sm" autocomplete="on">
                                                 </div>
                                             </div>
                                         </div>
@@ -79,11 +79,11 @@
                                             <thead>
                                             <tr>
                                                 <th>#</th>
-                                                <th data-toggle="true">Patient Name</th>
-                                                <th data-hide="phone">Patient Number</th>
-                                                <th data-hide="phone">Patient Address</th>
-                                                <th data-hide="phone">Patient Phone</th>
-                                                <th data-hide="phone">Patient Age</th>
+                                                <th data-toggle="true">Nom du patient</th>
+                                                <th data-hide="phone">Téléphone du patient</th>
+                                                <th data-hide="phone">Adresse du patient</th>
+                                                <th data-hide="phone">Téléphone du patient</th>
+                                                <th data-hide="phone">Age du patient</th>
                                                 <th data-hide="phone">Action</th>
                                             </tr>
                                             </thead>
@@ -109,9 +109,9 @@
                                                     <td><?php echo $row->pat_number;?></td>
                                                     <td><?php echo $row->pat_addr;?></td>
                                                     <td><?php echo $row->pat_phone;?></td>
-                                                    <td><?php echo $row->pat_age;?> Years</td>
+                                                    <td><?php echo $row->pat_age;?> ans</td>
                                                     
-                                                    <td><a href="his_doc_afficher_un_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>&&pat_name=<?php echo $row->pat_fname;?>_<?php echo $row->pat_lname;?>"  class="badge badge-success"><i class="mdi mdi-eye"></i> View</a></td>
+                                                    <td><a href="his_doc_afficher_un_patient.php?pat_id=<?php echo $row->pat_id;?>&&pat_number=<?php echo $row->pat_number;?>&&pat_name=<?php echo $row->pat_fname;?>_<?php echo $row->pat_lname;?>"  class="badge badge-success"><i class="mdi mdi-eye"></i> Afficher</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>

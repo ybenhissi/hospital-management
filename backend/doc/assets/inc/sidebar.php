@@ -28,7 +28,7 @@
                                         <a href="his_doc_ajouter_patient.php">Enregistrer un patient</a>
                                     </li>
                                     <li>
-                                        <a href="his_doc_view_patients.php">Afficher les patients</a>
+                                        <a href="his_doc_afficher_patients.php">Afficher les patients</a>
                                     </li>
                                     <li>
                                         <a href="his_doc_manage_patient.php">Gérer les patients</a>
