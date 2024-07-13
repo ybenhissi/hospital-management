@@ -110,7 +110,7 @@
                                                     <td><?php echo $row->pat_ailment;?></td>
                                                     <td><?php echo $row->pat_age;?> ans</td>
                                                     
-                                                    <td><a href="his_doc_add_single_patient_vitals.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Modifier les signes vitaux</a></td>
+                                                    <td><a href="his_doc_modifier-signes_vitaux_patient.php?pat_number=<?php echo $row->pat_number;?>" class="badge badge-success"><i class="mdi mdi-beaker "></i> Modifier les signes vitaux</a></td>
                                                 </tr>
                                                 </tbody>
                                             <?php  $cnt = $cnt +1 ; }?>
