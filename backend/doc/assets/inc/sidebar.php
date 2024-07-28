@@ -37,6 +37,44 @@
                             </li>
                             <li>
                                 <a href="javascript: void(0);">
+                                    <i class="mdi mdi-pill"></i>
+                                    <span> Pharmaceutique </span>
+                                    <span class="menu-arrow"></span>
+                                </a>
+                                <ul class="nav-second-level" aria-expanded="false">
+                                    <li>
+                                        <a href="his_doc_add_pharm_cat.php">Ajouter catégorie pharmaceutique</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_view_pharm_cat.php">Afficher catégorie pharmaceutique</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_manage_pharm_cat.php">Gérer catégorie pharmaceutique</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a href="his_doc_add_pharmaceuticals.php">Ajouter des produits pharmaceutiques</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_view_pharmaceuticals.php">Voir les produits pharmaceutiques</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_manage_pharmaceuticals.php">Gérer les produits pharmaceutiques</a>
+                                    </li>
+                                    <hr>
+                                    <li>
+                                        <a href="his_doc_add_presc.php">Ajouter ordonnances</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_view_presc.php">Afficher ordonnances</a>
+                                    </li>
+                                    <li>
+                                        <a href="his_doc_manage_presc.php">Gérer ordonnances</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="javascript: void(0);">
                                     <i class="mdi mdi-flask"></i>
                                     <span> Données de santé </span>
                                     <span class="menu-arrow"></span>

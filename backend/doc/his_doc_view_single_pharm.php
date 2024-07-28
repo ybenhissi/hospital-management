@@ -3,6 +3,7 @@
   include('assets/inc/config.php');
   include('assets/inc/checklogin.php');
   check_login();
+  //$aid=$_SESSION['ad_id'];
   $doc_id = $_SESSION['doc_id'];
 ?>
 <!DOCTYPE html>
@@ -27,12 +28,10 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
             <?php
-                $pres_number=$_GET['pres_number'];
-                $pres_id = $_GET['pres_id'];
-                $ret="SELECT  * FROM his_prescriptions WHERE pres_number = ? AND pres_id = ?";
+                $phar_bcode=$_GET['phar_bcode'];
+                $ret="SELECT  * FROM his_pharmaceuticals WHERE phar_bcode = ?";
                 $stmt= $mysqli->prepare($ret) ;
-                $stmt->bind_param('ii',$pres_number,$pres_id);
-                //$stmt->bind_param('i',$pres_id);
+                $stmt->bind_param('i',$phar_bcode);
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
                 //$cnt=1;
@@ -52,12 +51,12 @@
                                     <div class="page-title-box">
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="his_doc_tableau_de_bord.php">Tableau de bord</a></li>
+                                                <li class="breadcrumb-item"><a href="javascript: void(0);">Tableau de bord</a></li>
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Médicaments</a></li>
-                                                <li class="breadcrumb-item active">Afficher les ordonnances</li>
+                                                <li class="breadcrumb-item active">Voir les produits pharmaceutiques</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">#<?php echo $row->pres_number;?></h4>
+                                        <h4 class="page-title">#<?php echo $row->phar_bcode;?> - <?php echo $row->phar_name;?></h4>
                                     </div>
                                 </div>
                             </div>     
@@ -72,29 +71,24 @@
                                                 <div class="tab-content pt-0">
 
                                                     <div class="tab-pane active show" id="product-1-item">
-                                                        <img src="assets/images/users/patient.png" alt="" class="img-fluid mx-auto d-block rounded">
+                                                        <img src="assets/images/pharm.webp" alt="" class="img-fluid mx-auto d-block rounded">
                                                     </div>
                             
                                                 </div>
                                             </div> <!-- end col -->
                                             <div class="col-xl-7">
                                                 <div class="pl-xl-3 mt-3 mt-xl-0">
-                                                    <h2 class="mb-3">Nom : <?php echo $row->pres_pat_name;?></h2>
+                                                    <h2 class="mb-3">Nom pharmaceutique : <?php echo $row->phar_name;?></h2>
                                                     <hr>
-                                                    <h3 class="text-danger">Age : <?php echo $row->pres_pat_age;?> Ans</h3>
+                                                    <h4 class="text-danger">Fournisseur pharmaceutique : <?php echo $row->phar_vendor;?></h4>
                                                     <hr>
-                                                    <h3 class="text-danger ">Numéro de patient : <?php echo $row->pres_pat_number;?></h3>
+                                                    <h4 class="text-danger">Quantité pharmaceutique : <?php echo $row->phar_qty;?> Cartons</h4>
                                                     <hr>
-                                                    <h3 class="text-danger ">Catégorie de patients : <?php echo $row->pres_pat_type;?></h3>
-                                                    <hr>
-                                                    <h3 class="text-danger ">Maladie du patient : <?php echo $row->pres_pat_ailment;?></h3>
-                                                    <hr>
-                                                    <h2 class="align-centre">Ordonnance</h2>
-                                                    <hr>
+                                                    <h4 class="text-danger">Description pharmaceutique</h4>
+
                                                     <p class="text-muted mb-4">
-                                                        <?php echo $row->pres_ins;?>
+                                                        <?php echo $row->phar_desc;?>
                                                     </p>
-                                                    <hr>
                                                 </div>
                                             </div> <!-- end col -->
                                         </div>
@@ -108,7 +102,6 @@
                         </div> <!-- container -->
 
                     </div> <!-- content -->
-
                 </div>
             <?php }?>
 

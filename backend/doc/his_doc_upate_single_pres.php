@@ -1,19 +1,21 @@
+<!--Server side code to handle  Patient Registration-->
 <?php
 	session_start();
 	include('assets/inc/config.php');
-		if(isset($_POST['add_patient_presc']))
+		if(isset($_POST['update_patient_presc']))
 		{
 			$pres_pat_name = $_POST['pres_pat_name'];
-			$pres_pat_number = $_POST['pres_pat_number'];
+			//$pres_pat_number = $_POST['pres_pat_number'];
+            $pres_pat_type = $_POST['pres_pat_type'];
             $pres_pat_addr = $_POST['pres_pat_addr'];
             $pres_pat_age = $_POST['pres_pat_age'];
-            $pres_number = $_POST['pres_number'];
+            $pres_number = $_GET['pres_number'];
             $pres_ins = $_POST['pres_ins'];
             $pres_pat_ailment = $_POST['pres_pat_ailment'];
             //sql to insert captured values
-			$query="INSERT INTO  his_prescriptions  (pres_pat_name, pres_pat_number, pres_pat_type, pres_pat_addr, pres_pat_age, pres_number, pres_pat_ailment, pres_ins) VALUES(?,?,?,?,?,?,?,?)";
+			$query="UPDATE   his_prescriptions  SET pres_pat_name = ?, pres_pat_type = ?, pres_pat_addr = ?, pres_pat_age = ?, pres_pat_ailment = ?, pres_ins = ? WHERE pres_number = ?";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('ssssssss', $pres_pat_name, $pres_pat_number, $pres_pat_type, $pres_pat_addr, $pres_pat_age, $pres_number, $pres_pat_ailment, $pres_ins);
+			$rc=$stmt->bind_param('sssssss', $pres_pat_name, $pres_pat_type, $pres_pat_addr, $pres_pat_age,  $pres_pat_ailment, $pres_ins, $pres_number);
 			$stmt->execute();
 			/*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
@@ -22,10 +24,10 @@
 			//declare a varible which will be passed to alert function
 			if($stmt)
 			{
-				$success = "Patient Prescription Addded";
+				$success = "Prescription du patient mise à jour";
 			}
 			else {
-				$err = "Please Try Again Or Try Later";
+				$err = "Veuillez réessayer ou réessayer plus tard";
 			}
 			
 			
@@ -55,10 +57,10 @@
             <!-- Start Page Content here -->
             <!-- ============================================================== -->
             <?php
-                $pat_number = $_GET['pat_number'];
-                $ret="SELECT  * FROM his_patients WHERE pat_number=?";
+                $pres_number = $_GET['pres_number'];
+                $ret="SELECT  * FROM his_prescriptions WHERE pres_number=?";
                 $stmt= $mysqli->prepare($ret) ;
-                $stmt->bind_param('s',$pat_number);
+                $stmt->bind_param('s',$pres_number);
                 $stmt->execute() ;//ok
                 $res=$stmt->get_result();
                 //$cnt=1;
@@ -77,12 +79,12 @@
                                     <div class="page-title-box">
                                         <div class="page-title-right">
                                             <ol class="breadcrumb m-0">
-                                                <li class="breadcrumb-item"><a href="his_doc_tableau_de_bord.php">Tableau de bord</a></li>
+                                                <li class="breadcrumb-item"><a href="his_doc_dashboard.php">Tableau de bord</a></li>
                                                 <li class="breadcrumb-item"><a href="javascript: void(0);">Pharmacie</a></li>
-                                                <li class="breadcrumb-item active">Ajouter une ordonnance</li>
+                                                <li class="breadcrumb-item active">Gérer les ordonnances</li>
                                             </ol>
                                         </div>
-                                        <h4 class="page-title">Ajouter une prescription au patient</h4>
+                                        <h4 class="page-title">Mettre à jour la prescription du patient</h4>
                                     </div>
                                 </div>
                             </div>     
@@ -99,54 +101,35 @@
 
                                                     <div class="form-group col-md-6">
                                                         <label for="inputEmail4" class="col-form-label">Nom du patient</label>
-                                                        <input type="text" required="required" readonly name="pres_pat_name" value="<?php echo $row->pat_fname;?> <?php echo $row->pat_lname;?>" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
+                                                        <input type="text" required="required" readonly name="pres_pat_name" value="<?php echo $row->pres_pat_name;?>" class="form-control" id="inputEmail4" placeholder="Patient's First Name">
                                                     </div>
 
                                                     <div class="form-group col-md-6">
-                                                        <label for="inputPassword4" class="col-form-label">Âge du patient</label>
-                                                        <input required="required" type="text" readonly name="pres_pat_age" value="<?php echo $row->pat_age;?>" class="form-control"  id="inputPassword4" placeholder="Patient`s Last Name">
+                                                        <label for="inputPassword4" class="col-form-label">Âge du patients</label>
+                                                        <input required="required" type="text" readonly name="pres_pat_age" value="<?php echo $row->pres_pat_age;?>" class="form-control"  id="inputPassword4" placeholder="Patient`s Last Name">
                                                     </div>
 
                                                 </div>
 
-                                                <div class="form-row">
-
-                                                    <div class="form-group col-md-6">
-                                                        <label for="inputEmail4" class="col-form-label">Numéro de patient</label>
-                                                        <input type="text" required="required" readonly name="pres_pat_number" value="<?php echo $row->pat_number;?>" class="form-control" id="inputEmail4" placeholder="DD/MM/YYYY">
-                                                    </div>
-
-                                                    <div class="form-group col-md-6">
+                                                <div class="form-group">
                                                         <label for="inputPassword4" class="col-form-label">Adresse du patient</label>
-                                                        <input required="required" type="text" readonly name="pres_pat_addr" value="<?php echo $row->pat_addr;?>" class="form-control"  id="inputPassword4" placeholder="Patient`s Age">
-                                                    </div>
+                                                        <input required="required" type="text" readonly name="pres_pat_addr" value="<?php echo $row->pres_pat_addr;?>" class="form-control"  id="inputPassword4" placeholder="Patient`s Age">
 
                                                 </div>
 
                                                 <div class="form-group ">
                                                         <label for="inputCity" class="col-form-label">Maladie du patient</label>
-                                                        <input required="required" type="text" value="<?php echo $row->pat_ailment;?>" name="pres_pat_ailment" class="form-control" id="inputCity">
+                                                        <input required="required" type="text" value="<?php echo $row->pres_pat_ailment;?>" name="pres_pat_ailment" class="form-control" id="inputCity">
                                                 </div>
                                                 <hr>
-                                                <div class="form-row">
-                                                    
-                                            
-                                                    <div class="form-group col-md-2" style="display:none">
-                                                        <?php 
-                                                            $length = 5;    
-                                                            $pres_no =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
-                                                        ?>
-                                                        <label for="inputZip" class="col-form-label">Numéro d'ordonnance</label>
-                                                        <input type="text" name="pres_number" value="<?php echo $pres_no;?>" class="form-control" id="inputZip">
-                                                    </div>
-                                                </div>
+                                                
 
                                                 <div class="form-group">
                                                         <label for="inputAddress" class="col-form-label">Ordonnance</label>
-                                                        <textarea required="required"  type="text" class="form-control" name="pres_ins" id="editor"></textarea>
+                                                        <textarea required="required"  type="text" class="form-control" name="pres_ins" id="editor"><?php echo $row->pres_ins;?></textarea>
                                                 </div>
 
-                                                <button type="submit" name="add_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Ajouter une prescription au patient</button>
+                                                <button type="submit" name="update_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Mettre à jour la prescription du patient</button>
 
                                             </form>
                                             <!--End Patient Form-->
