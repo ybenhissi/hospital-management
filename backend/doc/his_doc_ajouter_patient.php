@@ -7,7 +7,6 @@
 			$pat_lname=$_POST['pat_lname'];
 			$pat_number=$_POST['pat_number'];
             $pat_phone=$_POST['pat_phone'];
-            $pat_type=$_POST['pat_type'];
             $pat_addr=$_POST['pat_addr'];
             $pat_age = $_POST['pat_age'];
             $pat_dob = $_POST['pat_dob'];

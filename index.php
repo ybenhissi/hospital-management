@@ -55,8 +55,8 @@
             <div class="row">
                 <div class="col-lg-8">
                     <h3>
-                    Prendre soin d’une vie meilleure</h3>
-                    <h1>Ouvrir la voie à l’excellence médicale</h1>
+                    Prendre soin d'une vie meilleure</h3>
+                    <h1>Ouvrir la voie à l'excellence médicale</h1>
                     <p>Nous sommes récompensés comme l'un des meilleurs systèmes de gestion hospitalière, capable d'intégrer tous les systèmes, processus et machines dans un système d'information intelligent pour obtenir une efficacité opérationnelle et aider les hôpitaux dans le processus de prise de décision.</p>
                 </div>
             </div>
