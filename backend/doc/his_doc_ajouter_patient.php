@@ -5,16 +5,18 @@
 		{
 			$pat_fname=$_POST['pat_fname'];
 			$pat_lname=$_POST['pat_lname'];
-			$pat_number=$_POST['pat_number'];
-            $pat_phone=$_POST['pat_phone'];
-            $pat_addr=$_POST['pat_addr'];
-            $pat_age = $_POST['pat_age'];
             $pat_dob = $_POST['pat_dob'];
+            $pat_age = $_POST['pat_age'];
+            $pat_addr=$_POST['pat_addr'];
+            $pat_email=$_POST['pat_email'];
+            $pat_phone=$_POST['pat_phone'];
             $pat_ailment = $_POST['pat_ailment'];
+			$pat_number=$_POST['pat_number'];
+            $pat_pwd = sha1(md5($_POST['pat_number']));//double encrypt to increase security
             //sql to insert captured values
-			$query="insert into his_patients (pat_fname, pat_ailment, pat_lname, pat_age, pat_dob, pat_number, pat_phone, pat_type, pat_addr) values(?,?,?,?,?,?,?,?,?)";
+			$query="insert into his_patients (pat_fname, pat_ailment, pat_lname, pat_age, pat_dob, pat_number, pat_phone,pat_addr,pat_email,pat_pwd) values(?,?,?,?,?,?,?,?,?,?)";
 			$stmt = $mysqli->prepare($query);
-			$rc=$stmt->bind_param('sssssssss', $pat_fname, $pat_ailment, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone, $pat_type, $pat_addr);
+			$rc=$stmt->bind_param('ssssssssss', $pat_fname, $pat_ailment, $pat_lname, $pat_age, $pat_dob, $pat_number, $pat_phone,  $pat_addr,$pat_email,$pat_pwd);
 			$stmt->execute();
 			/*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
@@ -108,11 +110,16 @@
                                                 </div>
                                             </div>
 
-                                            <div class="form-group">
-                                                <label for="inputAddress" class="col-form-label">Addresse</label>
-                                                <input required="required" type="text" class="form-control" name="pat_addr" id="inputAddress" placeholder="Adresse du Patient">
+                                            <div class="form-row">
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputAddress" class="col-form-label">Addresse</label>
+                                                    <input required="required" type="text" class="form-control" name="pat_addr" id="inputAddress" placeholder="Adresse du Patient">
+                                                </div>  
+                                                <div class="form-group col-md-6">
+                                                    <label for="inputEmail" class="col-form-label">Email</label>
+                                                    <input required="required" type="text" class="form-control" name="pat_email" id="inputEmail" placeholder="Email du Patient">
+                                                </div>  
                                             </div>
-
                                             <div class="form-row">
                                                 <div class="form-group col-md-6">
                                                     <label for="inputCity" class="col-form-label">Téléphone</label>

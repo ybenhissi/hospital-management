@@ -40,7 +40,7 @@
                     <ul class="nav-menu">
                         <li class="menu-active"><a href="index.php">Acceuil</a></li>
                         <li><a href="backend/doc/index.php">Professionnel de Santé</a></li>
-                        <li><a href="backend/admin/index.php">Patient</a></li>
+                        <li><a href="backend/patient/index.php">Patient</a></li>
                     </ul>
                 </nav><!-- #nav-menu-container -->		    		
                 </div>
