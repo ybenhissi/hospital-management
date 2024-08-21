@@ -39,7 +39,7 @@
                             <div class="col-12">
                                 <div class="page-title-box">
                                     
-                                    <h4 class="page-title">Hospital Management System Dashboard</h4>
+                                    <h4 class="page-title">Tableau de bord du système de gestion hospitalière</h4>
                                 </div>
                             </div>
                         </div>     
