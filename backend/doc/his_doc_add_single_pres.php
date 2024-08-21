@@ -18,17 +18,15 @@
 			/*
 			*Use Sweet Alerts Instead Of This Fucked Up Javascript Alerts
 			*echo"<script>alert('Successfully Created Account Proceed To Log In ');</script>";
-			*/ 
+			*/
 			//declare a varible which will be passed to alert function
 			if($stmt)
 			{
-				$success = "Patient Prescription Addded";
+				$success = "Prescription du patient ajoutée";
 			}
 			else {
-				$err = "Please Try Again Or Try Later";
+				$err = "Veuillez réessayer ou réessayer plus tard";
 			}
-			
-			
 		}
 ?>
 <!--End Server Side-->
@@ -70,7 +68,7 @@
 
                         <!-- Start Content-->
                         <div class="container-fluid">
-                            
+
                             <!-- start page title -->
                             <div class="row">
                                 <div class="col-12">
@@ -85,8 +83,8 @@
                                         <h4 class="page-title">Ajouter une prescription au patient</h4>
                                     </div>
                                 </div>
-                            </div>     
-                            <!-- end page title --> 
+                            </div>
+                            <!-- end page title -->
                             <!-- Form row -->
                             <div class="row">
                                 <div class="col-12">
@@ -129,11 +127,11 @@
                                                 </div>
                                                 <hr>
                                                 <div class="form-row">
-                                                    
-                                            
+
+
                                                     <div class="form-group col-md-2" style="display:none">
-                                                        <?php 
-                                                            $length = 5;    
+                                                        <?php
+                                                            $length = 5;
                                                             $pres_no =  substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'),1,$length);
                                                         ?>
                                                         <label for="inputZip" class="col-form-label">Numéro d'ordonnance</label>
@@ -143,9 +141,14 @@
 
                                                 <div class="form-group">
                                                         <label for="inputAddress" class="col-form-label">Ordonnance</label>
-                                                        <textarea required="required"  type="text" class="form-control" name="pres_ins" id="editor"></textarea>
+                                                        <textarea required="required" rows = "10" class="form-control" id= "pres_ins" name="pres_ins"></textarea>
+                                                        <!-- <textarea required="required"  type="text" class="form-control" name="pres_ins" id="editor"></textarea> -->
+                                                </div>
+                                                <div class="form-group">
+                                                    <progress id="progressbar" min="0" max="1" value="0">
                                                 </div>
 
+                                                <button type="submit" class="ladda-button btn btn-primary" data-style="expand-right"><input type="file" id="input_image" name="input_image"/></button>
                                                 <button type="submit" name="add_patient_presc" class="ladda-button btn btn-primary" data-style="expand-right">Ajouter une prescription au patient</button>
 
                                             </form>
@@ -172,12 +175,16 @@
         </div>
         <!-- END wrapper -->
 
-       
+        <style>
+            textarea {
+                resize: none;
+            }
+        </style>
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
         <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
         <script type="text/javascript">
-        CKEDITOR.replace('editor')
+        // CKEDITOR.replace('editor')
         </script>
 
         <!-- Vendor js -->
@@ -192,7 +199,35 @@
 
         <!-- Buttons init js-->
         <script src="assets/js/pages/loading-btn.init.js"></script>
-        
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+        <script src='https://cdn.rawgit.com/naptha/tesseract.js/1.0.10/dist/tesseract.js'></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function(){
+                var input_image = document.getElementById('input_image');
+                input_image.addEventListener('change', handleInputChange);
+            });
+
+            function handleInputChange(event){
+                var input = event.target;
+                var file = input.files[0];
+                console.log(file);
+                Tesseract.recognize(file)
+                    .progress(function(message){
+                        document.getElementById('progressbar').value = message.progress;
+                        console.log(message);
+                    })
+                    .then(function(result){
+                        var contentArea = document.getElementById('pres_ins');
+					    contentArea.innerHTML = result.text;
+                        console.log(result);
+                    })
+                    .catch(function(err){
+                        console.error(err);
+                    });
+            }
+        </script>
+
+
     </body>
 
 </html>
