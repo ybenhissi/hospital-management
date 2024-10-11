@@ -36,7 +36,7 @@
 <!--End Patient Registration-->
 <!DOCTYPE html>
 <html lang="en">
-    
+
     <!--Head-->
     <?php include('assets/inc/head.php');?>
     <body>
@@ -139,27 +139,28 @@
 
                                                     <div class="form-group col-md-3">
                                                         <label for="inputEmail4" class="col-form-label">Température corporelle du patient °C</label>
-                                                        <input type="text" required="required"  name="vit_bodytemp"class="form-control" id="inputEmail4" placeholder="°C">
+                                                        <input type="text" required="required"  name="vit_bodytemp"class="form-control" id="temperature" placeholder="°C">
                                                     </div>
 
                                                     <div class="form-group col-md-3">
                                                         <label for="inputPassword4" class="col-form-label">BPM du pouls/battement cardiaque du patient</label>
-                                                        <input required="required" type="text"  name="vit_heartpulse"  class="form-control"  id="inputPassword4" placeholder="HeartBeats Per Minute ">
+                                                        <input required="required" type="text"  name="vit_heartpulse"  class="form-control"  id="bpm" placeholder="HeartBeats Per Minute ">
                                                     </div>
 
                                                     <div class="form-group col-md-3">
                                                         <label for="inputPassword4" class="col-form-label">Fréquence respiratoire du patient bpm</label>
-                                                        <input required="required" type="text"  name="vit_resprate"  class="form-control"  id="inputPassword4" placeholder="Breathes Per Minute">
+                                                        <input required="required" type="text"  name="vit_resprate"  class="form-control"  id="respiration" placeholder="Breathes Per Minute">
                                                     </div>
 
                                                     <div class="form-group col-md-3">
                                                         <label for="inputPassword4" class="col-form-label">Tension artérielle du patient mmHg</label>
-                                                        <input required="required" type="text"  name="vit_bloodpress"  class="form-control"  id="inputPassword4" placeholder="mmHg">
+                                                        <input required="required" type="text"  name="vit_bloodpress"  class="form-control"  id="blood-pressure" placeholder="mmHg">
                                                     </div>
 
                                                 </div>
 
                                                 <button type="submit" name="add_patient_vitals" class="ladda-button btn btn-success" data-style="expand-right">modifier les signes viatux</button>
+                                                <button  class="ladda-button btn btn-success" data-style="expand-right"><input type="file" id="file-input" accept=".csv, .xlsx, .xls" /></button>
 
                                             </form>
                                             <!--End Patient Form-->
@@ -187,6 +188,73 @@
        
         <!-- Right bar overlay-->
         <div class="rightbar-overlay"></div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.0/xlsx.full.min.js"></script>
+        <script>
+            const fileInput = document.getElementById('file-input');
+
+            fileInput.addEventListener('change', function (event) {
+
+                const file = event.target.files[0];
+                if (file) {
+                    const fileName = file.name;
+                    const fileExtension = fileName.split('.').pop().toLowerCase();
+                    if (fileExtension === 'csv') {
+                        handleCSVFile(file);
+                    } else if (fileExtension === 'xlsx' || fileExtension === 'xls') {
+                        handleExcelFile(file);
+                    } else {
+                        alert('Unsupported file format. Please upload a CSV or Excel file.');
+                    }
+                }
+            });
+
+            function handleCSVFile(file) {
+                Papa.parse(file, {
+                    header: true,
+                    dynamicTyping: true,
+                    complete: function (results) {
+                        const data = results.data[0]; // Assuming the first row contains the patient data
+                        populateFields(data);
+                    },
+                    error: function (error) {
+                        console.error('Error parsing CSV:', error);
+                    }
+                });
+            }
+
+            function handleExcelFile(file) {
+                const reader = new FileReader();
+                reader.onload = function (e) {
+                    const data = new Uint8Array(e.target.result);
+                    const workbook = XLSX.read(data, { type: 'array' });
+                    const firstSheet = workbook.Sheets[workbook.SheetNames[0]];
+                    const jsonData = XLSX.utils.sheet_to_json(firstSheet, { header: 1 });
+
+                    const headers = jsonData[0]; // First row is the header
+                    const patientData = jsonData[1]; // Second row is the actual patient data
+
+                    const f = {
+                        'Temp': patientData[0],
+                        'BPM': patientData[1],
+                        'Freq': patientData[2],
+                        'Tension': patientData[3],
+                    };
+                    populateFields(f);
+                };
+
+                reader.readAsArrayBuffer(file);
+            }
+
+            function populateFields(data) {
+                data['Temp']
+                document.getElementById('temperature').value = data['Temp'] || '';
+                document.getElementById('bpm').value = data['BPM'] || '';
+                document.getElementById('respiration').value = data['Freq'] || '';
+                document.getElementById('blood-pressure').value = data['Tension'] || '';
+            }
+        </script>
+        
         <script src="//cdn.ckeditor.com/4.6.2/basic/ckeditor.js"></script>
         <script type="text/javascript">
         CKEDITOR.replace('editor')
@@ -204,6 +272,7 @@
 
         <!-- Buttons init js-->
         <script src="assets/js/pages/loading-btn.init.js"></script>
+   
         
     </body>
 
