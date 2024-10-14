@@ -12,7 +12,7 @@
             $pat_phone=$_POST['pat_phone'];
             $pat_ailment = $_POST['pat_ailment'];
 			$pat_number=$_POST['pat_number'];
-            $pat_pwd = sha1(md5($_POST['pat_number']));//double encrypt to increase security
+            $pat_pwd = sha1(md5(123456));//double encrypt to increase security
             //sql to insert captured values
 			$query="insert into his_patients (pat_fname, pat_ailment, pat_lname, pat_age, pat_dob, pat_number, pat_phone,pat_addr,pat_email,pat_pwd) values(?,?,?,?,?,?,?,?,?,?)";
 			$stmt = $mysqli->prepare($query);

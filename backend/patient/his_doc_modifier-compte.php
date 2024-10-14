@@ -5,14 +5,14 @@
 		{
 			$doc_fname=$_POST['doc_fname'];
 			$doc_lname=$_POST['doc_lname'];
-			$doc_id=$_SESSION['doc_id'];
+			$doc_id=$_SESSION['pat_id'];
             $doc_email=$_POST['doc_email'];
            // $doc_pwd=sha1(md5($_POST['doc_pwd']));
             $doc_dpic=$_FILES["doc_dpic"]["name"];
 		    move_uploaded_file($_FILES["doc_dpic"]["tmp_name"],"assets/images/users/".$_FILES["doc_dpic"]["name"]);
 
             //sql to insert captured values
-			$query="UPDATE his_docs SET doc_fname=?, doc_lname=?,  doc_email=?, doc_dpic=? WHERE doc_id = ?";
+			$query="UPDATE his_patients SET pat_fname=?, pat_lname=?,  pat_email=?, pat_dpic=? WHERE pat_id = ?";
 			$stmt = $mysqli->prepare($query);
 			$rc=$stmt->bind_param('ssssi', $doc_fname, $doc_lname, $doc_email, $doc_dpic, $doc_id);
 			$stmt->execute();
@@ -38,7 +38,7 @@
             $doc_pwd=sha1(md5($_POST['doc_pwd']));//double encrypt 
             
             //sql to insert captured values
-			$query="UPDATE his_patients SET doc_pwd =? WHERE pat_id = ?";
+			$query="UPDATE his_patients SET pat_pwd =? WHERE pat_id = ?";
 			$stmt = $mysqli->prepare($query);
 			$rc=$stmt->bind_param('si', $doc_pwd, $doc_number);
 			$stmt->execute();
